@@ -1,0 +1,5 @@
+com\mycompany\earlybirdpbo\App.class
+com\mycompany\earlybirdpbo\SystemInfo.class
+module-info.class
+LibraryStuff\WebServer.class
+LibraryStuff\RequestHandler.class
