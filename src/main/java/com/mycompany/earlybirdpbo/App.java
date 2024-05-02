@@ -31,6 +31,11 @@ public class App extends Application {
 
         primaryStage.setTitle("Web Server Configuration");
 
+        primaryStage.setOnCloseRequest(event -> {
+            // Menutup aplikasi saat jendela utama ditutup
+            System.exit(0);
+        });
+
         Preferences prefs = Preferences.userNodeForPackage(App.class);
 
         int defaultPort = prefs.getInt("port", 8080);
@@ -91,7 +96,7 @@ public class App extends Application {
         viewLogsButton.setOnAction(e -> {
             try {
                 // Mendapatkan direktori logs dari Preferences atau lokasi yang telah ditentukan
-                String logsDirectoryPath = "D:/Web/Logs"; // Ubah dengan lokasi direktori logs Anda
+                String logsDirectoryPath = defaultLogDir; // Ubah dengan lokasi direktori logs Anda
                 
                 // Membuat objek File yang merepresentasikan direktori logs
                 File logsDirectory = new File(logsDirectoryPath);
